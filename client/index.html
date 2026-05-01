@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ІДЗ Node.js: MongoDB Комп'ютери</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Система обліку комп'ютерів (Node.js Бекенд)</h2>
+
+      <div class="query-section">
+        <h3>Параметри пошуку</h3>
+
+        <label>Тип процесора:</label><br />
+        <select id="cpuSelect" onchange="checkStorage('cpu', this.value)">
+          <option value="">-- Оберіть CPU --</option>
+          <option value="Intel i5">Intel i5</option>
+          <option value="AMD Ryzen 7">AMD Ryzen 7</option>
+        </select>
+
+        <button
+          onclick="
+            sendRequest('cpu', document.getElementById('cpuSelect').value)
+          "
+        >
+          Запитати сервер
+        </button>
+
+        <div id="cpu_msg_found" class="cache-notice">
+          Знайдено збережений результат у LocalStorage!
+        </div>
+        <div id="cpu_msg_none" class="no-cache">
+          Раніше ви нічого не шукали за цим параметром.
+        </div>
+
+        <hr />
+
+        <label>Встановлене ПЗ:</label><br />
+        <select id="softSelect" onchange="checkStorage('software', this.value)">
+          <option value="">-- Оберіть ПЗ --</option>
+          <option value="Windows 11">Windows 11</option>
+          <option value="MS Office">MS Office</option>
+          <option value="Docker">Docker</option>
+          <option value="Linux Ubuntu">Linux Ubuntu</option>
+        </select>
+        <button
+          onclick="
+            sendRequest('software', document.getElementById('softSelect').value)
+          "
+        >
+          Запитати сервер
+        </button>
+
+        <div id="software_msg_found" class="cache-notice">
+          Є збережені дані для цього ПЗ.
+        </div>
+        <div id="software_msg_none" class="no-cache">
+          Цей софт ще не перевіряли.
+        </div>
+
+        <hr />
+
+        <label>Гарантійний термін:</label><br />
+        <button onclick="sendRequest('warranty', 'all')">
+          Знайти комп'ютери з вичерпаною гарантією
+        </button>
+      </div>
+
+      <div class="query-section" style="background: #fff">
+        <h3>Результат:</h3>
+        <pre id="output">Тут з'являться дані...</pre>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
