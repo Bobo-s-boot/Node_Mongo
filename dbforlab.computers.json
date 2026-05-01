@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "69cd128a078e71b0f53682d3"
+  },
+  "inv_num": "PC-001",
+  "buy_year": 2020,
+  "warranty": 3,
+  "cpu": "Intel i5",
+  "ram": "16GB",
+  "disk": "512GB SSD",
+  "software": [
+    "Windows 11",
+    "MS Office"
+  ]
+},
+{
+  "_id": {
+    "$oid": "69cd128a078e71b0f53682d4"
+  },
+  "inv_num": "PC-002",
+  "buy_year": 2025,
+  "warranty": 5,
+  "cpu": "AMD Ryzen 7",
+  "ram": "32GB",
+  "disk": "1TB M.2",
+  "software": [
+    "Docker"
+  ]
+},
+{
+  "_id": {
+    "$oid": "69cd128a078e71b0f53682d5"
+  },
+  "inv_num": "PC-003",
+  "buy_year": 2021,
+  "warranty": 2,
+  "cpu": "Intel i5",
+  "ram": "8GB",
+  "disk": "256GB HDD",
+  "software": [
+    "Linux Ubuntu"
+  ]
+}]
